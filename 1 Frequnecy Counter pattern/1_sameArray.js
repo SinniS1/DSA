@@ -1,6 +1,6 @@
 // Frequency Counter Pattern
 
-/* WAF caleed same, which accepts two arrays. 
+/* WAF called same, which accepts two arrays. 
 The func should return true if every value in the array has it's corresponding value squared in the second
 array. The frequency of values must be the same.
 */

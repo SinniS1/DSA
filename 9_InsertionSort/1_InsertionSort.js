@@ -11,3 +11,5 @@ function InsertionSort(array) {
 }
 
 console.log(InsertionSort([45, 74, 1, 2, 3, 58, 4, 5, 4, 2, 9, 6, 3]));
+
+// Time complexity is O(n^2)

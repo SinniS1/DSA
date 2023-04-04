@@ -1,10 +1,11 @@
 // Merge Sort
-function MergeSort(arr1, arr2) {
+// Merging function
+function Merging(arr1, arr2) {
 	var NewArray = [];
 	let i = 0;
 	let j = 0;
 	while (i < arr1.length && j < arr2.length) {
-		if (arr1[i] <= arr2[j]) {
+		if (arr1[i] < arr2[j]) {
 			NewArray.push(arr1[i]);
 			i++;
 		} else {
@@ -23,4 +24,13 @@ function MergeSort(arr1, arr2) {
 	return NewArray;
 }
 
-console.log(MergeSort([1, 3], [2, 4, 6, 8, 9, 10]));
+// Splitting function
+function Splitting(arr) {
+	if (arr.length <= 1) return arr;
+	let middle = Math.floor(arr.length / 2);
+	let left = Splitting(arr.slice(0, middle));
+	let right = Splitting(arr.slice(middle));
+	return Merging(left, right);
+}
+
+console.log(Splitting([10, 24, 76, 73]));

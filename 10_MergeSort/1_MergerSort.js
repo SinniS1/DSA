@@ -12,17 +12,15 @@ function MergeSort(arr1, arr2) {
 			j++;
 		}
 	}
-	if (i < arr1.length) {
-		for (let k = j; k < arr1.length; k++) {
-			NewArray.push(arr1[k]);
-		}
+	while (i < arr1.length) {
+		NewArray.push(arr1[i]);
+		i++;
 	}
-	if (j < arr2.length) {
-		for (let k = j; k < arr2.length; k++) {
-			NewArray.push(arr2[k]);
-		}
+	while (j < arr2.length) {
+		NewArray.push(arr2[j]);
+		j++;
 	}
 	return NewArray;
 }
 
-console.log(MergeSort([1, 3, 5, 7, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [2, 4, 6, 8, 9, 10]));
+console.log(MergeSort([1, 3], [2, 4, 6, 8, 9, 10]));

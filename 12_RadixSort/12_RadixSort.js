@@ -20,4 +20,33 @@ function digitCount(num) {
 	return value.length;
 }
 
-// console.log(digitCount(-12.13));
+function mostDigit(arr) {
+	let maxDigit = 0;
+	arr.forEach((element) => {
+		maxDigit = Math.max(maxDigit, digitCount(element));
+	});
+	return maxDigit;
+}
+
+function RadixSort(arr) {
+	// largest no. of digit is->
+	var largestDigit = mostDigit(arr);
+	for (let k = 0; k < largestDigit; k++) {
+		let digitBucket = Array.from({ length: 10 }, () => []);
+		for (let i = 0; i < arr.length; i++) {
+			var index = getPos(arr[i], k);
+			digitBucket[index].push(arr[i]);
+		}
+		// console.log(digitBucket);
+		arr = [].concat(...digitBucket);
+		// console.log(arr);
+		// console.log("---------------------------------------------------------");
+	}
+	return arr;
+}
+
+console.log(RadixSort([122, 12, 1, 0, 55, 25, 36]));
+
+// Time complexity of RadixSort -> O( nk )
+//  n  ->  number of elements in array
+//  k  ->  length of largest number

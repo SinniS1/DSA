@@ -18,5 +18,6 @@ function averagePair(arr, avg) {
 	return false;
 }
 
+// Test Cases
 console.log(averagePair([1, 2, 3], 2.5));
 console.log(averagePair([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6));

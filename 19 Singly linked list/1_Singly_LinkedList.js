@@ -119,6 +119,20 @@ class SinglyLinkedList {
 			this.length++;
 		}
 	}
+
+	Remove(index) {
+		if (index >= this.length || index < 0) return console.log("Enter valid index number");
+		else if (index === 0) {
+			this.shift();
+		} else if (index === this.length) {
+			this.pop();
+		} else {
+			var prevNode = this.Get(index - 1);
+			var currentNode = this.Get(index);
+			prevNode.next = currentNode.next;
+			this.length--;
+		}
+	}
 }
 
 var list = new SinglyLinkedList();
@@ -162,6 +176,23 @@ list.push("third node");
 
 // In between
 // list.Insert("Hello", 2);
+// console.log("\n\nvalue at index -> ", list.Get(1));
+// console.log(list);
+// --------------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------------
+// Remove
+console.log(list);
+// Head
+// list.Remove(0);
+// console.log("\n\nvalue at index -> ", list.Get(0));
+
+// Tail
+// list.Remove(2);
+// console.log("\n\nvalue at index -> ", list.Get(1));
+
+// In between
+// list.Remove(1);
 // console.log("\n\nvalue at index -> ", list.Get(1));
 // console.log(list);
 // --------------------------------------------------------------------------------------

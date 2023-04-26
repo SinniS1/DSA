@@ -104,6 +104,30 @@ class SinglyLinkedList {
 		var getNode = this.Get(index);
 		getNode.data = value;
 	}
+
+	Insert(value, index) {
+		var newNode = new Node(value);
+		if (index > this.length) return console.log("Enter valid index number");
+		else if (index === 0) {
+			newNode.next = this.head;
+			this.head = newNode;
+			this.length++;
+		} else if (index === this.length) {
+			this.tail.next = newNode;
+			this.tail = newNode
+			this.length++;
+		} else {
+			var ptr1 = this.head;
+			var i = 0;
+			while (i < index - 1) {
+				ptr1 = ptr1.next;
+				i++;
+			}
+			newNode.next = ptr1.next;
+			ptr1.next = newNode;
+			this.length++;
+		}
+	}
 }
 
 var list = new SinglyLinkedList();
@@ -132,4 +156,10 @@ list.push("third node");
 // Set Method
 // list.Set("Sachin", 0);
 // list.Set("Yadav", 0);
+// console.log(list);
+
+// Insert
+console.log(list);
+list.Insert(999, 3);
+console.log("\n\nvalue at index -> ", list.Get(3));
 console.log(list);

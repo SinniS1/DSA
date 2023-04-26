@@ -133,6 +133,30 @@ class SinglyLinkedList {
 			this.length--;
 		}
 	}
+
+	Print() {
+		var arr = [];
+		var current = this.head;
+		while (current) {
+			arr.push(current.data);
+			current = current.next;
+		}
+		console.log(arr);
+	}
+	Reverse() {
+		var node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+
+		var nextNode;
+		var prevNode = null;
+		for (let i = 0; i < this.length; i++) {
+			nextNode = node.next;
+			node.next = prevNode;
+			prevNode = node;
+			node = nextNode;
+		}
+	}
 }
 
 var list = new SinglyLinkedList();
@@ -154,46 +178,53 @@ list.push("third node");
 // list.shift();
 // list.shift();
 
-// console.log(list);
+// list.Print()
 // Get method
 // console.log("Retrieved Node is -> ", list.Get(0));
 
 // Set Method
 // list.Set("Sachin", 0);
 // list.Set("Yadav", 0);
-// console.log(list);
+// list.Print()
 
 // --------------------------------------------------------------------------------------
 // Insert
-// console.log(list);
+// list.Print();
 // Head
 // list.Insert(999, 0);
-// console.log("\n\nvalue at index -> ", list.Get(0));
+// console.log("value at index -> ", list.Get(0));
 
 // Tail
 // list.Insert(999, 3);
-// console.log("\n\nvalue at index -> ", list.Get(2));
+// console.log("value at index -> ", list.Get(2));
 
 // In between
 // list.Insert("Hello", 2);
-// console.log("\n\nvalue at index -> ", list.Get(1));
-// console.log(list);
+// console.log("value at index -> ", list.Get(1));
+// list.Print()
 // --------------------------------------------------------------------------------------
 //
 // --------------------------------------------------------------------------------------
 // Remove
-console.log(list);
+// list.Print()
 // Head
 // list.Remove(0);
-// console.log("\n\nvalue at index -> ", list.Get(0));
+// console.log("value at index -> ", list.Get(0));
 
 // Tail
 // list.Remove(2);
-// console.log("\n\nvalue at index -> ", list.Get(1));
+// console.log("value at index -> ", list.Get(1));
 
 // In between
 // list.Remove(1);
-// console.log("\n\nvalue at index -> ", list.Get(1));
-// console.log(list);
+// console.log("value at index -> ", list.Get(1));
+// list.Print()
+// --------------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------------
+// Reverse
+list.Print()
+list.Reverse()
+list.Print()
 // --------------------------------------------------------------------------------------
 //

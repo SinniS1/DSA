@@ -84,6 +84,18 @@ class SinglyLinkedList {
 			return current;
 		}
 	}
+
+	// Getting a node by its position
+	Get(index) {
+		if (index < 0 || index >= this.length) return null;
+		var i = 0;
+		var current = this.head;
+		while (i !== index) {
+			current = current.next;
+			i++;
+		}
+		return current.data;
+	}
 }
 
 var list = new SinglyLinkedList();
@@ -102,7 +114,8 @@ list.push("third node");
 // list.Unshift(46);
 
 // shift
-list.shift();
-list.shift();
+// list.shift();
+// list.shift();
 
 console.log(list);
+console.log("Retrieved Node is -> ", list.Get(0));

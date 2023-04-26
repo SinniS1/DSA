@@ -94,7 +94,15 @@ class SinglyLinkedList {
 			current = current.next;
 			i++;
 		}
-		return current.data;
+		return current;
+	}
+
+	// Updagting the value of node based on it's position
+	Set(value, index) {
+		// finding the node
+		if (index < 0 || index >= this.length) return console.log("Index is greater than length of linked list");
+		var getNode = this.Get(index);
+		getNode.data = value;
 	}
 }
 
@@ -117,5 +125,11 @@ list.push("third node");
 // list.shift();
 // list.shift();
 
+// console.log(list);
+// Get method
+// console.log("Retrieved Node is -> ", list.Get(0));
+
+// Set Method
+// list.Set("Sachin", 0);
+// list.Set("Yadav", 0);
 console.log(list);
-console.log("Retrieved Node is -> ", list.Get(0));

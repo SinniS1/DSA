@@ -31,18 +31,34 @@ class SinglyLinkedList {
 		return this;
 	}
 
-	// pop(){
-	// 	if(!this.head){
-	// 		return "empty SinglyLinkedList"
-	// 	}
-	// 	else{
-
-	// 	}
-	// }
+	pop() {
+		if (!this.head) {
+			return undefined;
+		} else {
+			var current = this.head;
+			var newTail = current;
+			while (current.next) {
+				newTail = current;
+				current = current.next;
+			}
+			this.tail = newTail;
+			this.tail.next = null;
+			this.length--;
+			if (this.length === 0) {
+				this.head = null;
+				this.tail = null;
+			}
+			return current;
+		}
+	}
 }
 
 var list = new SinglyLinkedList();
-list.push("fist node")
-list.push("second node")
-list.push("third node")
-console.log(list)
+list.push("fist node");
+list.push("second node");
+list.push("third node");
+console.log(list);
+console.log("Deletion of tail node - > ", list.pop());
+console.log("Deletion of tail node - > ", list.pop());
+console.log("Deletion of tail node - > ", list.pop());
+console.log(list);

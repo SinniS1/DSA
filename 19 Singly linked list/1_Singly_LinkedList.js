@@ -106,25 +106,16 @@ class SinglyLinkedList {
 	}
 
 	Insert(value, index) {
-		var newNode = new Node(value);
-		if (index > this.length) return console.log("Enter valid index number");
+		if (index > this.length || index < 0) return console.log("Enter valid index number");
 		else if (index === 0) {
-			newNode.next = this.head;
-			this.head = newNode;
-			this.length++;
+			this.Unshift(value);
 		} else if (index === this.length) {
-			this.tail.next = newNode;
-			this.tail = newNode
-			this.length++;
+			this.push(value);
 		} else {
-			var ptr1 = this.head;
-			var i = 0;
-			while (i < index - 1) {
-				ptr1 = ptr1.next;
-				i++;
-			}
-			newNode.next = ptr1.next;
-			ptr1.next = newNode;
+			var newNode = new Node(value);
+			var prevNode = this.Get(index - 1);
+			newNode.next = prevNode.next;
+			prevNode.next = newNode;
 			this.length++;
 		}
 	}
@@ -158,8 +149,20 @@ list.push("third node");
 // list.Set("Yadav", 0);
 // console.log(list);
 
+// --------------------------------------------------------------------------------------
 // Insert
-console.log(list);
-list.Insert(999, 3);
-console.log("\n\nvalue at index -> ", list.Get(3));
-console.log(list);
+// console.log(list);
+// Head
+// list.Insert(999, 0);
+// console.log("\n\nvalue at index -> ", list.Get(0));
+
+// Tail
+// list.Insert(999, 3);
+// console.log("\n\nvalue at index -> ", list.Get(2));
+
+// In between
+// list.Insert("Hello", 2);
+// console.log("\n\nvalue at index -> ", list.Get(1));
+// console.log(list);
+// --------------------------------------------------------------------------------------
+//

@@ -223,8 +223,15 @@ list.push("third node");
 //
 // --------------------------------------------------------------------------------------
 // Reverse
-list.Print()
-list.Reverse()
-list.Print()
+list.Print();
+list.Reverse();
+list.Print();
 // --------------------------------------------------------------------------------------
 //
+
+// Time complexity of SinglyLinkedList
+// Insertion   ->  O(1)
+// Removal from start  -> O(1)
+// 			from end 	-> O(n)
+// Searching -> 	O(n)
+// Access 	-> 		O(n)

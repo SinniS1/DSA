@@ -55,7 +55,7 @@ class SinglyLinkedList {
 	}
 
 	// Adding node at the start
-	shift(value) {
+	Unshift(value) {
 		var newNode = new Node(value);
 		if (!this.head) {
 			this.head = newNode;
@@ -67,6 +67,23 @@ class SinglyLinkedList {
 		this.length++;
 		return this;
 	}
+
+	// Deleting node at the start
+	shift() {
+		if (!this.head) return undefined;
+		else if (this.length === 1) {
+			var firstNode = this.head;
+			this.head = null;
+			this.tail = null;
+			this.length--;
+			return firstNode;
+		} else if (this.length > 1) {
+			var current = this.head;
+			this.head = this.head.next;
+			this.length--;
+			return current;
+		}
+	}
 }
 
 var list = new SinglyLinkedList();
@@ -76,12 +93,16 @@ list.push("second node");
 list.push("third node");
 
 // Pop
-console.log("Deletion of tail node - > ", list.pop());
-console.log("Deletion of tail node - > ", list.pop());
-console.log("Deletion of tail node - > ", list.pop());
+// console.log("Deletion of tail node - > ", list.pop());
+// console.log("Deletion of tail node - > ", list.pop());
+// console.log("Deletion of tail node - > ", list.pop());
 
-// Shift
-list.shift(45);
-list.shift(46);
+// UnShift
+// list.Unshift(45);
+// list.Unshift(46);
+
+// shift
+list.shift();
+list.shift();
 
 console.log(list);

@@ -18,6 +18,7 @@ class SinglyLinkedList {
 		this.length = 0;
 	}
 
+	// Adding node at the end
 	push(value) {
 		var newNode = new Node(value);
 		if (!this.head) {
@@ -31,6 +32,7 @@ class SinglyLinkedList {
 		return this;
 	}
 
+	// Deleting node at the end
 	pop() {
 		if (!this.head) {
 			return undefined;
@@ -51,14 +53,35 @@ class SinglyLinkedList {
 			return current;
 		}
 	}
+
+	// Adding node at the start
+	shift(value) {
+		var newNode = new Node(value);
+		if (!this.head) {
+			this.head = newNode;
+			this.tail = newNode;
+		} else {
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+		this.length++;
+		return this;
+	}
 }
 
 var list = new SinglyLinkedList();
+// push
 list.push("fist node");
 list.push("second node");
 list.push("third node");
-console.log(list);
+
+// Pop
 console.log("Deletion of tail node - > ", list.pop());
 console.log("Deletion of tail node - > ", list.pop());
 console.log("Deletion of tail node - > ", list.pop());
+
+// Shift
+list.shift(45);
+list.shift(46);
+
 console.log(list);

@@ -5,7 +5,7 @@ class Node {
 	constructor(data) {
 		this.data = data;
 		this.next = null;
-		this.previou = null;
+		this.previous = null;
 	}
 }
 

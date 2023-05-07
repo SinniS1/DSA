@@ -9,3 +9,111 @@ class Node {
 	}
 }
 
+class DoublyLinkedList {
+	constructor() {
+		this.head = null;
+		this.tail = null;
+		this.length = 0;
+	}
+
+	Print() {
+		var arr = [];
+		var current = this.head;
+		while (current) {
+			arr.push(current.data);
+			current = current.next;
+		}
+		console.log("\n", arr, "\n");
+	}
+
+	// Push method
+	Push(data) {
+		var newNode = new Node(data);
+		if (this.length === 0) {
+			this.head = newNode;
+			this.tail = newNode;
+		} else {
+			this.tail.next = newNode;
+			newNode.previous = this.tail;
+			this.tail = newNode;
+		}
+		this.length++;
+		return this;
+	}
+
+	// Pop method
+	Pop() {
+		if (this.length === 0) return console.log("List is empty");
+		var poppedNode = this.tail;
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.tail = this.tail.previous;
+			this.tail.next = null;
+		}
+		this.length--;
+		return console.log(poppedNode);
+	}
+
+	// Shift -> removing a node from beginning
+	Shift() {
+		if (this.length === 0) return console.log("List is empty");
+		var ShiftedNode = this.head;
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.head = this.head.next;
+			this.head.previous = null;
+		}
+		this.length--;
+		return console.log(ShiftedNode);
+	}
+
+	// UnShift -> Adding a node at beginning
+	UnShift(data) {
+		var newNode = new Node(data);
+		if (this.length === 0) {
+			this.head = newNode;
+			this.tail = newNode;
+		} else {
+			this.head.previous = newNode;
+			newNode.next = this.head;
+			this.head = newNode
+		}
+		this.length++;
+		return this;
+	}
+}
+
+var list = new DoublyLinkedList();
+
+// console.log(list);
+// Push data
+list.Push(50);
+list.Push(51);
+list.Push(52);
+list.Push("Next Item");
+
+// Pop Data
+// console.log("\n------------------------------------------------\n");
+// list.Print();
+// list.Pop();
+// list.Print();
+// console.log("\n------------------------------------------------\n");
+
+// Shift Data
+// console.log("\n------------------------------------------------\n");
+// list.Print();
+// list.Shift();
+// list.Print();
+// console.log("\n------------------------------------------------\n");
+
+
+// UnShift Data
+// console.log("\n------------------------------------------------\n");
+// list.Print();
+// list.UnShift("Head Start");
+// list.Print();
+// console.log("\n------------------------------------------------\n");

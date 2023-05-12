@@ -97,23 +97,23 @@ list.Push(52);
 list.Push("Next Item");
 
 // Pop Data
-// console.log("\n------------------------------------------------\n");
-// list.Print();
-// list.Pop();
-// list.Print();
-// console.log("\n------------------------------------------------\n");
+console.log("\n------------------------------------------------\n");
+list.Print();
+list.Pop();
+list.Print();
+console.log("\n------------------------------------------------\n");
 
 // Shift Data
-// console.log("\n------------------------------------------------\n");
-// list.Print();
-// list.Shift();
-// list.Print();
-// console.log("\n------------------------------------------------\n");
+console.log("\n------------------------------------------------\n");
+list.Print();
+list.Shift();
+list.Print();
+console.log("\n------------------------------------------------\n");
 
 
 // UnShift Data
-// console.log("\n------------------------------------------------\n");
-// list.Print();
-// list.UnShift("Head Start");
-// list.Print();
-// console.log("\n------------------------------------------------\n");
+console.log("\n------------------------------------------------\n");
+list.Print();
+list.UnShift("Head Start");
+list.Print();
+console.log("\n------------------------------------------------\n");

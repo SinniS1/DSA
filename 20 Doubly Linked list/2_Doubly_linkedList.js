@@ -85,35 +85,49 @@ class DoublyLinkedList {
 		this.length++;
 		return this;
 	}
+
+	// Get -> accessing a node by it's position	
+	Get(index){
+		if(index < 0 || index >= this.length) return null;
+		if(index <= this.length/2){
+			// start from left side
+			
+		}else{
+			// start from right side
+		}
+	}
 }
 
 var list = new DoublyLinkedList();
 
 // console.log(list);
 // Push data
+console.log("\n----------------------Push Data--------------------------\n");
 list.Push(50);
 list.Push(51);
 list.Push(52);
 list.Push("Next Item");
+list.Print()
+console.log("\n------------------------------------------------\n");
 
 // Pop Data
-console.log("\n------------------------------------------------\n");
-list.Print();
-list.Pop();
-list.Print();
-console.log("\n------------------------------------------------\n");
+// console.log("\n----------------------Pop data--------------------------\n");
+// list.Print();
+// list.Pop();
+// list.Print();
+// console.log("\n------------------------------------------------\n");
 
 // Shift Data
-console.log("\n------------------------------------------------\n");
-list.Print();
-list.Shift();
-list.Print();
-console.log("\n------------------------------------------------\n");
+// console.log("\n----------------------Shift data--------------------------\n");
+// list.Print();
+// list.Shift();
+// list.Print();
+// console.log("\n------------------------------------------------\n");
 
 
 // UnShift Data
-console.log("\n------------------------------------------------\n");
-list.Print();
-list.UnShift("Head Start");
-list.Print();
-console.log("\n------------------------------------------------\n");
+// console.log("\n----------------------UnShift data--------------------------\n");
+// list.Print();
+// list.UnShift("Head Start");
+// list.Print();
+// console.log("\n------------------------------------------------\n");

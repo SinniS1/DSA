@@ -131,3 +131,6 @@ console.log("\n------------------------------------------------\n");
 // list.UnShift("Head Start");
 // list.Print();
 // console.log("\n------------------------------------------------\n");
+
+
+// holding it because of sem exam. befor start Revise again from singly linked list 
